@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "weather-forecast-test": "apps/weather-forecast-test",
+    "weather-forecast-test-e2e": "apps/weather-forecast-test-e2e"
+  }
+}
