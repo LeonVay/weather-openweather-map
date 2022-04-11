@@ -1,0 +1,38 @@
+<section class="weather-forecast-search search-controls">
+  <form [formGroup]="searchForm" class="p-fluid">
+    <p-autoComplete formControlName="cities" class="featured-search-bar"
+                    [inputStyle]="{'width':'100%'}"
+                    [suggestions]="$any(results | async)"
+                    (completeMethod)="search($event)"
+                    field="name"
+                    dataKey="id"
+                    (onSelect)="handleItemSelected($event)"
+    >
+      <ng-template let-city pTemplate="item">
+        <div class="search-item">
+          <div>{{city.name}}, {{city.sys.country}}</div>
+          <div ngClass="{{'famfamfam-flags ' + city.sys.country.toLowerCase()}}"></div>
+        </div>
+      </ng-template>
+    </p-autoComplete>
+    <div class="p-inputgroup">
+      <div class="field-radiobutton">
+        <p-radioButton name="view"
+                       value="week"
+                       formControlName="view"
+                       inputId="week"
+                       label="View week"
+        ></p-radioButton>
+      </div>
+      <div class="field-radiobutton">
+        <p-radioButton name="view"
+                       value="day"
+                       formControlName="view"
+                       inputId="day"
+                       label="View day"
+        ></p-radioButton>
+      </div>
+    </div>
+  </form>
+
+</section>

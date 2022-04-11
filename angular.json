@@ -3,6 +3,12 @@
   "projects": {
     "api": "apps/api",
     "api-interfaces": "libs/api-interfaces",
+    "api-services": "libs/api-services",
+    "feature-auth": "libs/feature/auth",
+    "feature-content": "libs/feature/content",
+    "guards": "libs/guards",
+    "models": "libs/models",
+    "store": "libs/store",
     "weather-forecast-test": "apps/weather-forecast-test",
     "weather-forecast-test-e2e": "apps/weather-forecast-test-e2e"
   }

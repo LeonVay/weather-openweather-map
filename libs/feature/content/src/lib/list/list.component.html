@@ -1,0 +1,25 @@
+<section class="weather-forecast-list" *ngIf="(cities$ | async).length > 0">
+  <p-table [columns]="(columns$ | async)" [value]="(cities$ | async)" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr>
+        <ng-container *ngFor="let col of (columns$ | async)" [ngSwitch]="col.name">
+          <th *ngSwitchDefault [innerText]="col.name"></th>
+          <th *ngSwitchCase="col.name === 'action'">Action</th>
+        </ng-container>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <ng-container *ngFor="let col of columns" [ngSwitch]="col.name">
+          <td *ngSwitchDefault [innerText]="rowData[col.key]"></td>
+          <td *ngSwitchCase="col.name === 'action'">
+            <span  class="p-column-filter-remove-button" (click)="handleRowRemove(rowData.id)"></span>
+          </td>
+        </ng-container>
+      </tr>
+    </ng-template>
+  </p-table>
+</section>
+<section *ngIf="(cities$ | async).length === 0" class="no-data">
+  Please choose cities
+</section>

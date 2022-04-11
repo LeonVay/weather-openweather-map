@@ -11,13 +11,19 @@
     "target": "es2015",
     "module": "esnext",
     "lib": ["es2017", "dom"],
+    "resolveJsonModule": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
     "paths": {
-      "@weather-forecast-test/api-interfaces": [
-        "libs/api-interfaces/src/index.ts"
-      ]
+      "@libs/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@libs/api-services": ["libs/api-services/src/index.ts"],
+      "@libs/auth": ["libs/feature/auth/src/index.ts"],
+      "@libs/content": ["libs/feature/content/src/index.ts"],
+      "@libs/guards": ["libs/guards/src/index.ts"],
+      "@libs/store": ["libs/store/src/index.ts"],
+      "@libs/models": ["libs/models/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

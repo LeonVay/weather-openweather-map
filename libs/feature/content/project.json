@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/feature/content",
+  "sourceRoot": "libs/feature/content/src",
+  "prefix": "weather-forecast-test",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/feature/content"],
+      "options": {
+        "jestConfig": "libs/feature/content/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/feature/content/src/**/*.ts",
+          "libs/feature/content/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

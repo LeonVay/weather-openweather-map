@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Message } from '@weather-forecast-test/api-interfaces';
+import { Message } from '@libs/api-interfaces';
 
 @Component({
   selector: 'weather-forecast-test-root',
